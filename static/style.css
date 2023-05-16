@@ -1,0 +1,78 @@
+/**
+ * Copyright 2021 Google LLC
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+body {
+    font-family: "helvetica", sans-serif;
+    text-align: center;
+    background-color: #222222;
+    color: #FFFFFF
+}
+
+img {
+    border-radius: 5%;
+  }
+
+a{
+    color:#ffffff
+}
+
+a:hover{
+    color: #1DB954;
+}
+
+button{
+    background-color: #FFFFFF;
+    color:#000000
+}
+
+button:hover{
+    background-color: #1DB954;
+    color: #ffffff
+}
+
+.playlist_songs{    
+    height: 300px;                
+    width: 500px;             
+    overflow: hidden;       
+    overflow-y: scroll;
+} 
+
+#users_playlists{
+    height: 600px;                
+    width: auto;             
+    overflow: hidden;       
+    overflow-y: scroll;
+}
+
+#songs_panel{
+    float: left;
+}
+
+#published_playlist{
+    display: inline-block;
+}
+#sort_panel{
+    float: right;
+    width: 500px;
+}
+
+#i_playlist_songs{
+    float: left
+}
+
+#s_playlist_songs{
+    float: right
+}

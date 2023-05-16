@@ -1,0 +1,48 @@
+<!doctype html>
+<!--
+ Copyright 2021 Google LLC
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+
+<html>
+<head>
+  <title>Datastore and Firebase Auth Example</title>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+  <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <h1>Thank You page</h1>
+
+    <h2>Welcome {{info['username']}}</h2>
+
+    <h3>Thank you for using the Spotify Playlist Sorter.</h3>
+    <h3>Here are the songs in your new playlist: {{info['new_playlist']['name']}}.</h3>
+       
+    <img src={{info['new_playlist']['images'][0]['url']}} alt={{info['new_playlist']['name'] + " Playlist image"}} width="300" height="300">
+
+    <div id="published_playlist">
+        <h3>Songs</h3>
+        <ol class="playlist_songs">
+            {% for song in info['new_playlist']['tracks']['items'] %}
+                <li>
+                    <h4>{{song['track']['name']}}</h4>
+                    <p>By: {{song['track']['artists'][0]['name']}}</p>
+                </li>
+            {% endfor %}
+        </ol>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!doctype html>
+<!--
+ Copyright 2021 Google LLC
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+
+<html>
+<head>
+  <title>Datastore and Firebase Auth Example</title>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+  <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <h1>Playlist Page</h1>
+
+    <h2>Welcome {{info['username']}}</h2>
+
+    <h2>Your Spotify playlists and their descriptions are below. Choose one to get started.</h2>
+
+    <div id="users_playlists">
+        {% for playlist in info['playlists'] %}
+            <a href='https://playlist-sorter.wl.r.appspot.com/songs/{{playlist['id']}}'><img src={{playlist['images'][0]['url']}} alt={{playlist['name'] + " Playlist image"}} width="300" height="300"></a>
+            
+            <a href='https://playlist-sorter.wl.r.appspot.com/songs/{{playlist['id']}}'><h3>{{playlist['name']}}</h3></a>
+            <p>{{playlist['description']}}</p>
+        {% endfor %}
+    </div>
+
+</body>
+</html>
